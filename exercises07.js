@@ -1,3 +1,3 @@
-function mult(x,y){
-  return x*y;
+function multilyNumbers(number1,number2) {
+  return number1 * number2;
 }
