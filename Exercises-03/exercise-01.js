@@ -1,17 +1,16 @@
-function flattenArray(arr) {
-    let flattenedArray = [];
-    if(!Array.isArray(arr)) return 0
-    for(let element of arr){
-        if(Array.isArray(element)){
-            const nestedArr = flattenArray(element);
-            for(let nestedElement of nestedArr) {
-                flattenedArray.push(nestedElement)
+function flattenNestedArray(input) {
+    let result = [];
+    if(!Array.isArray(input)) return input
+    for(let item of input){
+        if(Array.isArray(item)){
+            const nestedArray = flattenNestedArray(item);
+            for(let innerItem of nestedArray) {
+                result.push(innerItem)
             }
         } else {
-            flattenedArray.push(element)
+            result.push(item)
         }
     }
-    return flattenedArray ;
+    return result ;
 }
 const arr = [1, [2, [3, [4,[2]]]]];
-console.log(flattenArray(arr))
