@@ -1,4 +1,5 @@
-function calculateMatrixSum(matrix) {
-  const flatternMatrix = matrix.flat();
-  return flatternMatrix.reduce((accumulator, current) => accumulator + current, 0)
+function calculateMatrixSum(input) {
+  const flatMatrix = input.flat();
+  
+  return flatMatrix.reduce((accumulator, current) => accumulator + current, 0)
 }
